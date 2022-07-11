@@ -32,7 +32,7 @@ public class OpenSpawnSelectorModule implements TerminableModule {
               }
 
               // open the gui for the target
-              new SpawnSelectorGui(target, plugin);
+              new SpawnSelectorGui(target, plugin).open();
             })
             .registerAndBind(consumer, "spawnselectorgui");
   }
