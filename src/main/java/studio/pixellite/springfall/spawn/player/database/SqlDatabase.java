@@ -19,11 +19,11 @@ import java.util.concurrent.CompletableFuture;
  */
 public class SqlDatabase implements Database {
   // ignore column locations
-  private static final String APPLY_PLAYER_DATA_SCHEMA = "CREATE TABLE IF NOT EXISTS springfall_spawn_locations (" +
-          "uuid BINARY(16) PRIMARY KEY," +
+  private static final String APPLY_PLAYER_DATA_SCHEMA = "CREATE TABLE IF NOT EXISTS springfall_spawns (" +
+          "uuid VARCHAR(36) PRIMARY KEY," +
           "location VARCHAR(10) NOT NULL)";
-  private static final String GET_PLAYER_DATA = "SELECT location FROM springfall_spawn_locations WHERE uuid = ?";
-  private static final String INSERT_PLAYER_DATA = "INSERT INTO springfall_spawn_locations (uuid, location) VALUES(?, ?) ON DUPLICATE KEY UPDATE location = ?";
+  private static final String GET_PLAYER_DATA = "SELECT location FROM springfall_spawns WHERE uuid = ?";
+  private static final String INSERT_PLAYER_DATA = "INSERT INTO springfall_spawns (uuid, location) VALUES(?, ?) ON DUPLICATE KEY UPDATE location = ?";
 
   private final Sql sql;
   private final SpawnPlugin plugin;
