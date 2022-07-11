@@ -1,0 +1,7 @@
+name: SpringfallSpawnHandler
+author: Pixellite Studios
+version: 1.0.0
+api-version: 1.13
+main: studio.pixellite.springfall.spawn.SpawnPlugin
+website: https://pixellite.studio/
+depend: [helper, helper-sql]

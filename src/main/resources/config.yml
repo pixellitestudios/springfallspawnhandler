@@ -1,0 +1,53 @@
+# The message to be sent to first joining players.
+first-join-message:
+  - ' '
+  - '&7&oAfter a nauseating dream, you wake up in a strange place. You'
+  - '&7&osee someone standing in the distance... maybe you should go talk to them.'
+  - ' '
+
+# The default spawn location for a player in the event that there spawn location (for some
+# reason) isn't saved.
+default-spawn-location: 'earth'
+
+# The five different spawn locations.
+world-spawn-locations:
+  # Where the player should spawn at on their first join.
+  first-spawn-location:
+    world: 'spawn'
+    x: 0
+    y: 100
+    z: 0
+    pitch: 0
+    yaw: 0
+  # A spawn location in an "earth" biome.
+  earth:
+    world: 'world'
+    x: 0
+    y: 100
+    z: 0
+    pitch: 0
+    yaw: 0
+  # A spawn location in a volcanic biome.
+  fire:
+    world: 'world'
+    x: 0
+    y: 100
+    z: 0
+    pitch: 0
+    yaw: 0
+  # A spawn location in an ice biome.
+  ice:
+    world: 'world'
+    x: 0
+    y: 100
+    z: 0
+    pitch: 0
+    yaw: 0
+  # A spawn location in a mountainous biome.
+  highlands:
+    world: 'world'
+    x: 0
+    y: 100
+    z: 0
+    pitch: 0
+    yaw: 0
