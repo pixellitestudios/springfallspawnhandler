@@ -18,13 +18,12 @@ import java.util.concurrent.CompletableFuture;
  * An implementation of {@link Database} using helper's sql utilities.
  */
 public class SqlDatabase implements Database {
-  private static final String APPLY_PLAYER_DATA_SCHEMA = "CREATE TABLE IF NOT EXISTS player_spawns (" +
+  // ignore column locations
+  private static final String APPLY_PLAYER_DATA_SCHEMA = "CREATE TABLE IF NOT EXISTS springfall_spawn_locations (" +
           "uuid BINARY(16) PRIMARY KEY," +
           "location VARCHAR(10) NOT NULL)";
-
-  // ignore column limit
-  private static final String GET_PLAYER_DATA = "SELECT location FROM player_spawns WHERE uuid = UNHEX(?)";
-  private static final String INSERT_PLAYER_DATA = "INSERT INTO player_spawns (uuid, location) VALUES(UNHEX(?), ?) ON DUPLICATE KEY UPDATE location = ?";
+  private static final String GET_PLAYER_DATA = "SELECT location FROM springfall_spawn_locations WHERE uuid = ?";
+  private static final String INSERT_PLAYER_DATA = "INSERT INTO springfall_spawn_locations (uuid, location) VALUES(?, ?) ON DUPLICATE KEY UPDATE location = ?";
 
   private final Sql sql;
   private final SpawnPlugin plugin;
