@@ -23,8 +23,8 @@ public class SqlDatabase implements Database {
           "location VARCHAR(10) NOT NULL)";
 
   // ignore column limit
-  private static final String GET_PLAYER_DATA = "SELECT location FROM player_spawns WHERE uuid = ?";
-  private static final String INSERT_PLAYER_DATA = "INSERT INTO player_spawns (uuid, location) VALUES(?, ?) ON DUPLICATE KEY UPDATE location = ?";
+  private static final String GET_PLAYER_DATA = "SELECT location FROM player_spawns WHERE uuid = UNHEX(?)";
+  private static final String INSERT_PLAYER_DATA = "INSERT INTO player_spawns (uuid, location) VALUES(UNHEX(?), ?) ON DUPLICATE KEY UPDATE location = ?";
 
   private final Sql sql;
   private final SpawnPlugin plugin;
