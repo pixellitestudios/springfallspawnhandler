@@ -19,7 +19,7 @@ import java.util.concurrent.CompletableFuture;
  */
 public class SqlDatabase implements Database {
   private static final String APPLY_PLAYER_DATA_SCHEMA = "CREATE TABLE IF NOT EXISTS player_spawns (" +
-          "uuid BINARY(16) PRIMARY KEY" +
+          "uuid BINARY(16) PRIMARY KEY," +
           "location VARCHAR(10) NOT NULL)";
 
   // ignore column limit
