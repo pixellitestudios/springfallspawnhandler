@@ -58,7 +58,7 @@ public class SqlDatabase implements Database {
     return CompletableFuture.supplyAsync(() -> {
       try(Connection c = sql.getConnection()) {
         try (PreparedStatement ps = c.prepareStatement(GET_PLAYER_DATA)) {
-          ps.setString(1, UndashedUuids.toString(uniqueId));
+          ps.setString(1, uniqueId.toString());
 
           try(ResultSet rs = ps.executeQuery()) {
             if(rs.next()) {
@@ -80,7 +80,7 @@ public class SqlDatabase implements Database {
     return CompletableFuture.runAsync(() -> {
       try(Connection c = sql.getConnection()) {
         try (PreparedStatement ps = c.prepareStatement(INSERT_PLAYER_DATA)) {
-          ps.setString(1, UndashedUuids.toString(uniqueId));
+          ps.setString(1, uniqueId.toString());
           ps.setString(2, locationName);
           ps.setString(3, locationName);
           ps.execute();

@@ -38,7 +38,7 @@ public class SpawnSelectorGui extends Gui {
 
     Schedulers.sync().runLater(() -> {
       getPlayer().teleportAsync(spawn.getBukkitLocation());
-      getPlayer().playSound(getPlayer().getLocation(), Sound.ENTITY_ENDERMAN_TELEPORT, 1, 1);
+      getPlayer().playSound(spawn.getBukkitLocation(), Sound.ENTITY_ENDERMAN_TELEPORT, 1, 1);
     }, 40);
 
     // close this gui
